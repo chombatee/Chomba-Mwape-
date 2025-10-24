@@ -8,12 +8,13 @@ using System.Diagnostics;
 using System.Xml.Linq;
 using static Azure.Core.HttpHeader;
 using static part_1.Models.get_cliams;
+using SqlException = System.Data.SqlClient.SqlException;
 
 namespace part_1.Controllers
 {
     public class HomeController : Controller
     {
-        public string conString = ""
+        public string conString = "Data Source=LabVM1846780\\SQLEXPRESS;Initial Catalog=claiming_system;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
         public connect conn = new connect();
         private readonly ILogger<HomeController> _logger;
 
@@ -215,7 +216,7 @@ namespace part_1.Controllers
                         connects.Close();
                     }
                 }
-                catch (IOException e)
+                catch (SqlException e)
                 {
                     username = "error " + e.Message;
                 }
@@ -266,7 +267,7 @@ namespace part_1.Controllers
 
 
             }
-            catch (IOException e)
+            catch (SqlException e)
             {
 
             }
@@ -319,7 +320,7 @@ namespace part_1.Controllers
                     }
                 }
             }
-            catch (IOException e)
+            catch (SqlException e)
             {
              
             }
@@ -366,7 +367,7 @@ namespace part_1.Controllers
 
                 }
             }
-            catch (IOException e)
+            catch (SqlException e)
             {
 
             }
