@@ -73,18 +73,18 @@ namespace part_1.Controllers
             {
 
                 file_found = "yes";
-                // Get the file name
+                // This Allow to get the file name
                 filename = Path.GetFileName(file.FileName);
                 // Define the folder path (pdf folder)
                 folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/pdf");
-                // Ensure the pdf folder exists
+                // this verifies the pdf folder exists
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
                 }
-                // Define the full path where the file will be saved
+                // This will define the full path where the file will be saved
                 filePath = Path.Combine(folderPath, filename);
-                // Save the file to the specified path
+                // This saves the file to the specified path
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     file.CopyTo(stream);
@@ -149,7 +149,7 @@ namespace part_1.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Logic to handle login (e.g., authentication)
+                // the Logic to handle login (authentication)
                 string username = model.Username;
                 string password = model.Password;
                 string workType = model.WorkType;
@@ -360,7 +360,7 @@ namespace part_1.Controllers
                         updates.ExecuteNonQuery();
 
 
-                        //Redirect after successful register
+                        //this going to Redirect users  after successful register
                         return RedirectToAction("Index", "Home");
 
                     }
@@ -374,7 +374,7 @@ namespace part_1.Controllers
 
 
 
-            //Redirect after successful login
+            //this Redirects  after successful login
             return RedirectToAction("Register", "Home");
 
         }
