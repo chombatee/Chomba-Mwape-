@@ -13,9 +13,10 @@ namespace part_1.Controllers
 {
     public class HomeController : Controller
     {
-
+        public string conString = ""
         public connect conn = new connect();
         private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -154,6 +155,8 @@ namespace part_1.Controllers
                 string password = model.Password;
                 string workType = model.WorkType;
 
+
+
                 try
                 {
                     using (System.Data.SqlClient.SqlConnection connects = new System.Data.SqlClient.SqlConnection(conn.connecting()))
@@ -246,7 +249,6 @@ namespace part_1.Controllers
                     using (System.Data.SqlClient.SqlCommand updates = new System.Data.SqlClient.SqlCommand(update, connects))
                     {
 
-
                         //
                         updates.ExecuteNonQuery();
 
@@ -259,10 +261,6 @@ namespace part_1.Controllers
 
                     connects.Close();
                 }
-
-
-
-
 
                 //
 
@@ -338,6 +336,7 @@ namespace part_1.Controllers
             try
             {
                 using (System.Data.SqlClient.SqlConnection connects = new System.Data.SqlClient.SqlConnection(conn.connecting()))
+
                 {
                     connects.Open();
 
