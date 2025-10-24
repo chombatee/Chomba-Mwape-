@@ -1,4 +1,4 @@
-HELLO ☺️ welcome to the CMCMS
+Hi There Welcome to the CMCMS
 
 The contract monthly claims management system is a practical application created for Independent contractor lecturers to simplify the often complex claim submission and approval processes that lecturers and program co-ordinators struggle with it is a ASP.NET MVC application written in C#👩🏾‍💻
 
