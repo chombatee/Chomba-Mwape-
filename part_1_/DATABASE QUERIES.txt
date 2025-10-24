@@ -1,0 +1,46 @@
+create database claiming_system
+
+use [claiming_system]
+
+CREATE TABLE users (
+   username varchar(100) not null unique,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    role VARCHAR(50) NOT NULL,
+    module VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+);
+
+
+select * from users;
+
+create table active(
+
+username varchar(100),
+name varchar(100),
+status varchar(100)
+);
+
+insert into active values('none','no','no');
+
+select * from active;
+
+
+ create table claims(
+ 
+ id int not null identity(1,1),
+ username varchar(200),
+ module  varchar(200),
+ claim_date  varchar(200),
+ claim_period  varchar(200),
+ hour_rate  varchar(200),
+ hour_worked  varchar(200),
+ description  varchar(500),
+ total  varchar(200),
+ filename  varchar(200),
+ filepath  varchar(500),
+ status  varchar(200)
+ )
+
+ select * from claims;
+
